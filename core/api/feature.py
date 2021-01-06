@@ -1,4 +1,4 @@
-from product import models
+from apps.product import models
 from database import SessionLocal, engine
 
 db = SessionLocal()
