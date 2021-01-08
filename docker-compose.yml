@@ -3,14 +3,26 @@ version: "3"
    
 services:
   api:
-    build: ./core/api 
-    command: uvicorn main:app --host=0.0.0.0 --port=8000 --reload --app-dir="./core/api"
-    volumes:
-      - .:/code
+    build: ./core/api
+    container_name: api
+    command: uvicorn main:app --host=0.0.0.0 --port=8000 --reload
+    volumes: 
+      - .:/core/api
     ports:
       - "8000:8000"
     depends_on:
       - db
+
+  web:
+    build: ./core/admin
+    command: python manage.py runserver 0.0.0.0:8002
+    volumes:
+      - .:/core/admin
+    ports:
+      - "8002:8002"
+    depends_on:
+      - db
+
   db:
     image: mysql:5.7
     restart: always
@@ -35,12 +47,5 @@ services:
       - ./dump_db:/docker-entrypoint-initdb.d
 
     
-  web:
-    build: ./core/admin
-    command: python /app/manage.py runserver 0.0.0.0:8002
-    ports:
-      - "8002:8002"
-    depends_on:
-      - db
 volumes:
   my-db:

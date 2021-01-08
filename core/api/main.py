@@ -45,4 +45,4 @@ async def validation_exception_handler(request, exc):
 
 @app.get("/")
 def main():
-    return RedirectResponse(url="/docs/")
+    return RedirectResponse(url="/redoc/")

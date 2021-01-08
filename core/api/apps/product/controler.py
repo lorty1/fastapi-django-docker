@@ -31,7 +31,6 @@ async def show_product(pk: int, db: Session = Depends(get_db)):
     response_description="Product data added into the database"
 )
 async def create_product(product: schemas.Product, db: Session = Depends(get_db)):
-    print(hasattr(product, 'title'))
     return product
 
 

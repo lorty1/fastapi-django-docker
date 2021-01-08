@@ -1,0 +1,13 @@
+image: python:3.8
+
+stage:
+  - build
+  - test
+
+build:
+  stage: build
+  script:
+
+test:
+  stage: test
+  script: pytest
