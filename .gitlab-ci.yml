@@ -7,10 +7,10 @@ before_script:
 stages:
   - pretest
   - Test
-  -endtest
+  - endtest
 
 pretest:
-  stage:
+  stage: pretest
   script:
     -  python --version
 
@@ -20,6 +20,6 @@ pytest:
   - pytest
 
 endtest:
-  stage:
+  stage: endtest
   script:
     -  python --version
