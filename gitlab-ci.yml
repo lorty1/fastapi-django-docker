@@ -1,13 +1,27 @@
-image: python:3.8
+image: "python:3.7"
 
-stage:
-  - build
-  - test
+before_script:
+  - python --version
+  - pip install -r ./core/api/requirements.txt
 
-build:
-  stage: build
+stages:
+  - pretest
+  - Test
+  -endtest
+
+...
+
+pretest:
+  stage:
   script:
+    -  python --version
 
-test:
-  stage: test
-  script: pytest
+pytest:
+  stage: Test
+  script:
+  - pytest
+
+endtest:
+  stage:
+  script:
+    -  python --version
