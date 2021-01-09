@@ -1,8 +1,8 @@
 from fastapi import APIRouter, FastAPI, Depends, HTTPException
 from fastapi.exceptions import RequestValidationError
-from apps.product import models, schemas
+from core.api.apps.product import models, schemas
 from typing import List
-from database import engine, get_db
+from core.api.database import engine, get_db
 from sqlalchemy.orm import Session
 
 router = APIRouter()
