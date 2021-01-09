@@ -9,8 +9,6 @@ stages:
   - Test
   -endtest
 
-...
-
 pretest:
   stage:
   script:
