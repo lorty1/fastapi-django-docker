@@ -1,3 +1,7 @@
+
+import os, sys
+BASE_DIR = os.path.dirname(os.path.realpath(__file__))
+api_module = sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 from typing import List
 
 from fastapi import Depends, FastAPI, HTTPException, Request
@@ -8,13 +12,14 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import PlainTextResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
-from apps.product import controler as product_controler
-from database import SessionLocal
+from core.api.apps.product import controler as product_controler
+from core.api.database import SessionLocal
 
 
 app = FastAPI()
 #Import all controler
 app.include_router(product_controler.router,prefix="/api")
+
 
 
 app.add_middleware(
@@ -45,4 +50,4 @@ async def validation_exception_handler(request, exc):
 
 @app.get("/")
 def main():
-    return RedirectResponse(url="/docs/")
+    return RedirectResponse(url="/redoc/")

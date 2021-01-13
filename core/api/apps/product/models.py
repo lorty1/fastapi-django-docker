@@ -1,7 +1,7 @@
 from sqlalchemy import Boolean, String, Integer, Column
 from sqlalchemy.orm import relationship
 import sys
-from database import Base
+from core.api.database import Base
 
 class Product(Base):
     __tablename__="product"
