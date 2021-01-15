@@ -9,7 +9,7 @@ stages:
   - Test
   - endtest
 
-pretest:
+lint:
   stage: FlakeControl
   script:
     -  flake8 ./core/api
