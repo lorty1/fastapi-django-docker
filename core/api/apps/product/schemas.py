@@ -1,5 +1,6 @@
 from pydantic import BaseModel
-from typing import Optional, List
+from typing import Optional
+
 
 class Product(BaseModel):
     """
@@ -13,12 +14,14 @@ class Product(BaseModel):
     class Config:
         orm_mode = True
 
+
 class ProductOut(BaseModel):
     """
     Product table
     """
     title: str
     description: Optional[str] = None
+
 
 class Category(BaseModel):
     """

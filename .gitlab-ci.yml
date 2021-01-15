@@ -5,14 +5,14 @@ before_script:
   - pip install -r ./core/api/requirements.txt
 
 stages:
-  - pretest
+  - FlakeControl
   - Test
   - endtest
 
 pretest:
-  stage: pretest
+  stage: FlakeControl
   script:
-    -  python --version
+    -  flake8 ./core/api
 
 pytest:
   stage: Test

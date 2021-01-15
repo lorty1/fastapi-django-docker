@@ -1,10 +1,5 @@
 
-import os, sys
-BASE_DIR = os.path.dirname(os.path.realpath(__file__))
-api_module = sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
-from typing import List
-
-from fastapi import Depends, FastAPI, HTTPException, Request
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from starlette.responses import RedirectResponse
@@ -17,9 +12,8 @@ from core.api.database import SessionLocal
 
 
 app = FastAPI()
-#Import all controler
-app.include_router(product_controler.router,prefix="/api")
-
+# Import all controler
+app.include_router(product_controler.router, prefix="/api")
 
 
 app.add_middleware(
@@ -29,6 +23,7 @@ app.add_middleware(
     allow_headers=["*"],
     allow_credentials=True,
 )
+
 
 # Dependency
 def get_db():
@@ -47,6 +42,7 @@ async def http_exception_handler(request, exc):
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request, exc):
     return PlainTextResponse(str(exc), status_code=400)
+
 
 @app.get("/")
 def main():
