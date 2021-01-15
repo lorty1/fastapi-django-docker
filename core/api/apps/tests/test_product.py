@@ -17,10 +17,10 @@ def test_create_product_success():
     assert response.status_code == 200
 
 
-def test_create_error_title():
-    response = client.post(
-        '/api/products/',
-        json={"description": "fdfdf", "is_active": "false"}
-    )
-    assert response.status_code == 400
-    assert response.json()['detail'] == "Un titre est requis !"
+# def test_create_error_title():
+#     response = client.post(
+#         '/api/products/',
+#         json={"description": "fdfdf", "is_active": "false"}
+#     )
+#     assert response.status_code == 400
+#     assert response.json()['detail'] == "Un titre est requis !"

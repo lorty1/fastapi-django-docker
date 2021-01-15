@@ -6,7 +6,7 @@ before_script:
 
 stages:
   - FlakeControl
-  - Test
+  - TestApi
   - endtest
 
 lint:
@@ -14,10 +14,10 @@ lint:
   script:
     -  flake8 ./core/api
 
-pytest:
-  stage: Test
+testAPI:
+  stage: TestApi
   script:
-  - pytest
+  - pytest ./core/api/
 
 endtest:
   stage: endtest
