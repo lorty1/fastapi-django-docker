@@ -7,8 +7,8 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import PlainTextResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
-from core.api.apps.product import controler as product_controler
-from core.api.database import SessionLocal
+from apps.product import controler as product_controler
+from database import SessionLocal
 
 
 app = FastAPI()

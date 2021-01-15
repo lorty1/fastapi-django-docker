@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
-from core.api.apps.product import models, schemas
+from apps.product import models, schemas
 from typing import List
-from core.api.database import engine, get_db
+from database import engine, get_db
 from sqlalchemy.orm import Session
 
 router = APIRouter()
