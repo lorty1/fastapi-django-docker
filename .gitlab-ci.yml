@@ -19,7 +19,7 @@ web:
     - sudo docker-compose build web
     - sudo docker-compose up -d web
 # image: "python:3.7"
-# testrtmldf
+# testrtml
 # before_script:
 #   - python --version
 #   - pip install -r ./core/api/requirements.txt
