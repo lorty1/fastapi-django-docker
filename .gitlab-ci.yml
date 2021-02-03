@@ -9,7 +9,7 @@ default:
     - sudo docker build web
     - sudo docker run -d -p web
 # image: "python:3.7"
-# testrt
+# testrtml
 # before_script:
 #   - python --version
 #   - pip install -r ./core/api/requirements.txt
