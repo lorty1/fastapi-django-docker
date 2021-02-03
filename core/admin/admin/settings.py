@@ -89,7 +89,7 @@ DATABASES = {
         'NAME': 'products_db',
         'USER': 'will',
         'PASSWORD': 'Djibouti1788!',
-        'HOST': 'localhost',
+        'HOST': 'db',
         'PORT': '3306',
     },
     'users_db': {
@@ -97,7 +97,7 @@ DATABASES = {
         'NAME': 'users_db',
         'USER': 'will',
         'PASSWORD': 'Djibouti1788!',
-        'HOST': 'localhost',
+        'HOST': 'db',
         'PORT': '3306',
     }
 

@@ -14,7 +14,7 @@ models.Base.metadata.create_all(bind=engine)
     response_model=List[schemas.Product]
 )
 async def show_products(db: Session = Depends(get_db)):
-    '''Return Product List'''
+    ''' Return Product List '''
     products = db.query(models.Product).all()
     return products
 

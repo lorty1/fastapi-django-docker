@@ -1,6 +1,5 @@
 
 version: "3"
-echo:"ok ca roule"
 services:
   api:
     build: ./core/api 
@@ -9,7 +8,8 @@ services:
       - "8000:8000"
     depends_on:
       - db
-
+    links:
+      - db
   web:
     build: ./core/admin
     command: python manage.py runserver 0.0.0.0:8002
@@ -19,6 +19,9 @@ services:
       - "8002:8002"
     depends_on:
       - db
+    links:
+      - db
+    
 
   db:
     image: mysql:5.7

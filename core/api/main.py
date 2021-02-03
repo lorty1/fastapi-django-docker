@@ -1,4 +1,4 @@
-
+import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -47,3 +47,6 @@ async def validation_exception_handler(request, exc):
 @app.get("/")
 def main():
     return RedirectResponse(url="/redoc/")
+
+if __name__ == '__main__':
+    uvicorn.run(app, host="0.0.0.0", port=8000)

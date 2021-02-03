@@ -1,2 +1,2 @@
-.env filter=git-crypt diff=git-crypt
-.gitattibutes !filter !diff
+# .env filter=git-crypt diff=git-crypt
+# .gitattibutes !filter !diff
