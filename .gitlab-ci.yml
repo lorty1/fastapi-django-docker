@@ -5,8 +5,8 @@ default:
   tags:
     - test
   script:
-    - sudo docker build web
-    - sudo docker run -d -p 8000:8000 web
+    - sudo docker-compose build web
+    - sudo docker-compose up -d web
 # image: "python:3.7"
 # testrtml
 # before_script:
