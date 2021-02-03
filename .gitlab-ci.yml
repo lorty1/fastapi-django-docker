@@ -3,7 +3,7 @@ default:
   only:
     - production
   tags:
-    - production
+    - test
   script:
     - sudo  docker  stop  $(sudo  docker  ps  -a  -q)
     - sudo  docker  build web
